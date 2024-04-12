@@ -26,6 +26,7 @@
         "drupal/etc": "^1.0@beta",
         "drupal/gin": "^3.0@RC",
         "drupal/pet": "4.x-dev@dev",
+        "drupal/prototype": "^5.2",
         "drupal/readonlymode": "dev-1.x",
         "drupal/ui_styles_paragraphs": "1.1.x-dev@dev",
         "drupal/ui_suite_bootstrap": "^5.0@alpha",
