@@ -1,0 +1,5 @@
+name: 'SAF multi step form ajax example'
+type: module
+description: 'Example multi step form'
+package: 1saf
+core_version_requirement: ^10 || ^11
