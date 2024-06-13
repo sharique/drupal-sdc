@@ -1,0 +1,14 @@
+saf_msf.multi_step_ajax:
+  path: '/saf-msf/multi-step-ajax'
+  defaults:
+    _title: 'Multi Step ajax form'
+    _form: 'Drupal\saf_msf\Form\MultiStepAjaxForm'
+  requirements:
+    _permission: 'access content'
+saf_msf.multi_step:
+  path: '/saf-msf/multi-step'
+  defaults:
+    _title: 'Multi Step'
+    _form: 'Drupal\saf_msf\Form\MultiStepForm'
+  requirements:
+    _permission: 'access content'
