@@ -10,11 +10,21 @@
     },
     "repositories": [
         {
+            "type": "vcs",
+            "url": "git@git.drupal.org:issue/ui_suite_bootstrap-3412076.git",
+            "branch": "ui_suite_bootstrap-3412076"
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
+        "bower-asset/bootstrap": "^5.3",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.4",
@@ -25,13 +35,15 @@
         "drupal/devel": "^5.1",
         "drupal/etc": "^1.0@beta",
         "drupal/gin": "^3.0@RC",
-        "drupal/htmx": "^1.2",
+        "drupal/htmx": "1.2.x-dev@dev",
         "drupal/pet": "4.x-dev@dev",
         "drupal/prototype": "^5.2",
         "drupal/readonlymode": "dev-1.x",
+        "drupal/ui_patterns": "^2.0",
         "drupal/ui_styles_paragraphs": "1.1.x-dev@dev",
-        "drupal/ui_suite_bootstrap": "^5.0@alpha",
-        "drush/drush": "^13.0"
+        "drupal/ui_suite_bootstrap": "dev-3412076-5.0.x-automatic-conversion",
+        "drush/drush": "^13.0",
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -45,7 +57,8 @@
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "oomphinc/composer-installers-extender": true
         },
         "sort-packages": true
     },
@@ -55,12 +68,18 @@
                 "web-root": "web/"
             }
         },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
             ],
             "web/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -99,9 +118,6 @@
             },
             "drupal/layout_paragraphs": {
                 "Overlay Widget Jump Stutter": "https://www.drupal.org/files/issues/2022-10-14/3276258-9.patch"
-            },
-            "drupal/ui_patterns": {
-                "#3335833 - Search for other enabled themes in order to fix issue": "https://git.drupalcode.org/project/ui_patterns/-/merge_requests/20.diff"
             },
             "drupal/auto_entitylabel": {
                 "#3350884 - Generate+Hide option fails when Preserve Title option selected": "https://www.drupal.org/files/issues/2023-03-28/auto_entitylabel-n3350884-6.patch",
