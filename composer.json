@@ -1,142 +1,140 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal projects with a relocated document root",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
-    "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    ],
-    "require": {
-        "composer/installers": "^2.0",
-        "cweagans/composer-patches": "^1.7",
-        "drupal/admin_toolbar": "^3.4",
-        "drupal/coder": "^8.3",
-        "drupal/core-composer-scaffold": "^10.3",
-        "drupal/core-project-message": "^10.3",
-        "drupal/core-recommended": "^10.3",
-        "drupal/devel": "^5.1",
-        "drupal/etc": "^1.0@beta",
-        "drupal/gin": "^3.0@RC",
-        "drupal/htmx": "^1.2",
-        "drupal/pet": "4.x-dev@dev",
-        "drupal/prototype": "^5.2",
-        "drupal/readonlymode": "dev-1.x",
-        "drupal/ui_styles_paragraphs": "1.1.x-dev@dev",
-        "drupal/ui_suite_bootstrap": "^5.0@alpha",
-        "drush/drush": "^13.0"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "cweagans/composer-patches": true
-        },
-        "sort-packages": true
-    },
-    "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            }
-        },
-        "installer-paths": {
-            "web/core": [
-                "type:drupal-core"
-            ],
-            "web/libraries/{$name}": [
-                "type:drupal-library"
-            ],
-            "web/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
-            "web/modules/custom/{$name}": [
-                "type:drupal-custom-module"
-            ],
-            "web/profiles/custom/{$name}": [
-                "type:drupal-custom-profile"
-            ],
-            "web/themes/custom/{$name}": [
-                "type:drupal-custom-theme"
-            ]
-        },
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
-        "composer-exit-on-patch-failure": true,
-        "enable-patching": true,
-        "patches": {
-            "drupal/color_field": {
-                "#3064418 - HTML5 widget for unlimited values needs improvements": "https://www.drupal.org/files/issues/2022-09-21/3064418-14--color-field-html5-widget-clear.patch",
-                "#3344907 - ColorHex::__construct(): Argument #2 ($opacity) must be of type ?string, int given": "https://git.drupalcode.org/project/color_field/-/merge_requests/12.diff"
-            },
-            "drupal/field_formatter": {
-                "#3333885: Infinite loop when first available formatter extends FieldWrapperBase": "https://git.drupalcode.org/project/field_formatter/-/merge_requests/8.diff"
-            },
-            "drupal/layout_paragraphs": {
-                "Overlay Widget Jump Stutter": "https://www.drupal.org/files/issues/2022-10-14/3276258-9.patch"
-            },
-            "drupal/ui_patterns": {
-                "#3335833 - Search for other enabled themes in order to fix issue": "https://git.drupalcode.org/project/ui_patterns/-/merge_requests/20.diff"
-            },
-            "drupal/auto_entitylabel": {
-                "#3350884 - Generate+Hide option fails when Preserve Title option selected": "https://www.drupal.org/files/issues/2023-03-28/auto_entitylabel-n3350884-6.patch",
-                "#3239799 - %AutoEntityLabel% title when Preserve already created node titles. option is enabled": "https://www.drupal.org/files/issues/2023-04-03/auto_entitylabel-n3239799-30.patch"
-            },
-            "drupal/token": {
-                "#3112449 - Token for link field url": "https://git.drupalcode.org/project/token/-/merge_requests/24.patch"
-            },
-            "drupal/fontawesome": {
-                "#3274028 - CKEditor 5 compatibility": "https://git.drupalcode.org/project/fontawesome/-/merge_requests/30.patch"
-            }
-        },
-        "drupal-core-project-message": {
-            "include-keys": [
-                "homepage",
-                "support"
-            ],
-            "post-create-project-cmd-message": [
-                "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
-                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
-                "<bg=blue;fg=white>                                                         </>",
-                "",
-                "<bg=yellow;fg=black>Next steps</>:",
-                "  * Install the site: https://www.drupal.org/docs/installing-drupal",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/support",
-                "  * Get involved with the Drupal community:",
-                "      https://www.drupal.org/getting-involved",
-                "  * Remove the plugin that prints this message:",
-                "      composer remove drupal/core-project-message"
-            ]
-        }
-    },
-    "require-dev": {
-        "phpcompatibility/php-compatibility": "^9.3"
+  "name": "drupal/recommended-project",
+  "description": "Project template for Drupal projects with a relocated document root",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/drupal",
+  "support": {
+    "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+    "chat": "https://www.drupal.org/node/314178"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
     }
+  ],
+  "require": {
+    "composer/installers": "^2.0",
+    "cweagans/composer-patches": "^1.7",
+    "drupal/admin_toolbar": "^3.4",
+    "drupal/core-composer-scaffold": "^11",
+    "drupal/core-project-message": "^11",
+    "drupal/core-recommended": "^11",
+    "drupal/devel": "^5.1",
+    "drupal/ds": "^3.24",
+    "drupal/gin": "^3.0@RC",
+    "drupal/htmx": "^1.2",
+    "drupal/pet": "4.x-dev@dev",
+    "drupal/prototype": "^5.2",
+    "drupal/readonlymode": "dev-1.x",
+    "drupal/ui_icons": "^1.0@beta",
+    "drupal/ui_styles_paragraphs": "1.1.x-dev@dev",
+    "drupal/ui_suite_daisyui": "^4.0@alpha",
+    "drush/drush": "^13.0"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true,
+      "phpstan/extension-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "cweagans/composer-patches": true
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    },
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/Commands/contrib/{$name}": [
+        "type:drupal-drush"
+      ],
+      "web/modules/custom/{$name}": [
+        "type:drupal-custom-module"
+      ],
+      "web/profiles/custom/{$name}": [
+        "type:drupal-custom-profile"
+      ],
+      "web/themes/custom/{$name}": [
+        "type:drupal-custom-theme"
+      ]
+    },
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "composer-exit-on-patch-failure": true,
+    "enable-patching": true,
+    "patches": {
+      "drupal/color_field": {
+        "#3064418 - HTML5 widget for unlimited values needs improvements": "https://www.drupal.org/files/issues/2022-09-21/3064418-14--color-field-html5-widget-clear.patch",
+        "#3344907 - ColorHex::__construct(): Argument #2 ($opacity) must be of type ?string, int given": "https://git.drupalcode.org/project/color_field/-/merge_requests/12.diff"
+      },
+      "drupal/field_formatter": {
+        "#3333885: Infinite loop when first available formatter extends FieldWrapperBase": "https://git.drupalcode.org/project/field_formatter/-/merge_requests/8.diff"
+      },
+      "drupal/layout_paragraphs": {
+        "Overlay Widget Jump Stutter": "https://www.drupal.org/files/issues/2022-10-14/3276258-9.patch"
+      },
+      "drupal/auto_entitylabel": {
+        "#3350884 - Generate+Hide option fails when Preserve Title option selected": "https://www.drupal.org/files/issues/2023-03-28/auto_entitylabel-n3350884-6.patch",
+        "#3239799 - %AutoEntityLabel% title when Preserve already created node titles. option is enabled": "https://www.drupal.org/files/issues/2023-04-03/auto_entitylabel-n3239799-30.patch"
+      },
+      "drupal/token": {
+        "#3112449 - Token for link field url": "https://git.drupalcode.org/project/token/-/merge_requests/24.patch"
+      },
+      "drupal/fontawesome": {
+        "#3274028 - CKEditor 5 compatibility": "https://git.drupalcode.org/project/fontawesome/-/merge_requests/30.patch"
+      }
+    },
+    "drupal-core-project-message": {
+      "include-keys": [
+        "homepage",
+        "support"
+      ],
+      "post-create-project-cmd-message": [
+        "<bg=blue;fg=white>                                                         </>",
+        "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+        "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
+        "<bg=blue;fg=white>                                                         </>",
+        "",
+        "<bg=yellow;fg=black>Next steps</>:",
+        "  * Install the site: https://www.drupal.org/docs/installing-drupal",
+        "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+        "  * Get support: https://www.drupal.org/support",
+        "  * Get involved with the Drupal community:",
+        "      https://www.drupal.org/getting-involved",
+        "  * Remove the plugin that prints this message:",
+        "      composer remove drupal/core-project-message"
+      ]
+    }
+  },
+  "require-dev": {
+    "drupal/coder": "^8.3",
+    "phpcompatibility/php-compatibility": "^9.3"
+  }
 }
