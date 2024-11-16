@@ -4,3 +4,8 @@ config:
   webroot: web
   php: 8.3
   database: mariadb:11.4
+services:
+  appserver:
+    xdebug: "debug"
+    config:
+      php: .vscode/php.ini
